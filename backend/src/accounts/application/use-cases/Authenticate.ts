@@ -1,7 +1,7 @@
-import { InvalidCredentialsError } from '@/accounts/domain/core/errors/InvalidCredentialsError'
-import { IAccountsRepository } from '@/accounts/domain/core/infra/repositories/AccountsRepository'
-import { ICriptor } from '@/accounts/domain/core/infra/services/Criptor'
+import { InvalidCredentialsError } from '@/core/errors/InvalidCredentialsError'
+import { ICriptor } from '@/core/infra/services/Criptor'
 import { Account } from '@/accounts/domain/entities/Account'
+import { IAccountsRepository } from '@/accounts/domain/repositories/AccountsRepository'
 
 interface AuthenticateUseCaseInput {
   username: string

@@ -1,13 +1,13 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'vitest'
-import { IAccountsRepository } from '../domain/core/infra/repositories/AccountsRepository'
 import { AuthenticateUseCase } from '../application/use-cases/Authenticate'
 import { InMemoryAccountsRepository } from '../infra/repositories/InMemoryAccountsRepository'
-import { ICriptor } from '../domain/core/infra/services/Criptor'
+import { ICriptor } from '../../core/infra/services/Criptor'
 import { CryptoCriptorAdapter } from '../infra/services/CryptoCriptorAdapter'
 import { Username } from '../domain/value-objects/Username'
 import { Account } from '../domain/entities/Account'
-import { InvalidCredentialsError } from '../domain/core/errors/InvalidCredentialsError'
+import { InvalidCredentialsError } from '../../core/errors/InvalidCredentialsError'
 import { Password } from '../domain/value-objects/Password'
+import { IAccountsRepository } from '../domain/repositories/AccountsRepository'
 
 let criptor: ICriptor
 let accountsRepository: IAccountsRepository

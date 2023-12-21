@@ -14,6 +14,7 @@ Como resolver: Simular o ambiente de trabalho com pessoas “conhecidas” (esti
 * connections
   - [] Deve ser possível enviar um pedido de conexão
   - [] Deve ser possível aceitar um pedido de conexão
+  - [] Deve ser possível negar um pedido de conexão
 
 * events
   - [] Deve ser possível criar eventos para um usuário
@@ -54,6 +55,12 @@ Como resolver: Simular o ambiente de trabalho com pessoas “conhecidas” (esti
 - [] Na criação do evento deve ser possível escolher um local esporádico para o evento ou escolher na lista de locais cadastrados
 - [] Quando um evento for criado os convidados devem receber uma notificação
 - [] Apenas pessoas pertencentes ao time terão a permissão de criação de evento de time
+- [x] Quando um usuário solicita uma conexão está ficará com status pending
+- [x] Conexões com status pending podem ser ou aceitas ou negadas
+- [] Uma conexão não pode ser duplicada, mesmo que invertendo o requerente com o destinatário
+- [x] Conexões negadas não pode ser aceitas
+- [x] Conexões aceitas não pode sem negadas
+
 
 # Requisitos não funcionais
 

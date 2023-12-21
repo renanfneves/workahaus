@@ -1,5 +1,5 @@
-import { IAccountsRepository } from '@/accounts/domain/core/infra/repositories/AccountsRepository'
 import { Account } from '@/accounts/domain/entities/Account'
+import { IAccountsRepository } from '@/accounts/domain/repositories/AccountsRepository'
 
 export class InMemoryAccountsRepository implements IAccountsRepository {
   private accounts: Account[] = []

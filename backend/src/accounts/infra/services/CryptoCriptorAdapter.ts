@@ -1,5 +1,5 @@
 import crypto from 'node:crypto'
-import { ICriptor } from '@/accounts/domain/core/infra/services/Criptor'
+import { ICriptor } from '@/core/infra/services/Criptor'
 
 export class CryptoCriptorAdapter implements ICriptor {
   key: Buffer = crypto.randomBytes(32)

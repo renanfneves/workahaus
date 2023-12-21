@@ -1,10 +1,11 @@
-import { describe, beforeEach, expect, it, beforeAll } from 'vitest'
-import { ICriptor } from '../domain/core/infra/services/Criptor'
-import { IAccountsRepository } from '../domain/core/infra/repositories/AccountsRepository'
+import { describe, beforeEach, expect, it, beforeAll, vi } from 'vitest'
+import { ICriptor } from '../../core/infra/services/Criptor'
 import { CryptoCriptorAdapter } from '../infra/services/CryptoCriptorAdapter'
 import { InMemoryAccountsRepository } from '../infra/repositories/InMemoryAccountsRepository'
-import { DuplicatedResourceError } from '../domain/core/errors/DuplicatedResourceError'
+import { DuplicatedResourceError } from '../../core/errors/DuplicatedResourceError'
 import { CreateAccountUseCase } from '../application/use-cases/CreateAccount'
+import { IAccountsRepository } from '../domain/repositories/AccountsRepository'
+import { Account } from '../domain/entities/Account'
 
 let criptor: ICriptor
 let accountRepository: IAccountsRepository
@@ -37,5 +38,18 @@ describe('CreateAccountUseCase', () => {
     }
     const { id } = await sut.execute(account)
     expect(id).toEqual(expect.any(String))
+  })
+  it('should notify when a new account is created', async () => {
+    const sendAccountCreatedEventSpy = vi.spyOn(
+      Account.prototype,
+      'sendAccountCreatedEvent',
+    )
+    await sut.execute({
+      name: 'John Doe',
+      username: 'johndoe@example.com',
+      password: 'Password@123',
+    })
+    expect(sendAccountCreatedEventSpy).toHaveBeenCalled()
+    sendAccountCreatedEventSpy.mockRestore()
   })
 })

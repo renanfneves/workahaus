@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it } from 'vitest'
-import { ICriptor } from '../domain/core/infra/services/Criptor'
+import { ICriptor } from '../../core/infra/services/Criptor'
 import { CryptoCriptorAdapter } from '../infra/services/CryptoCriptorAdapter'
 
 let sut: ICriptor

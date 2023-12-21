@@ -1,4 +1,4 @@
-import { InvalidCredentialsError } from '../core/errors/InvalidCredentialsError'
+import { InvalidCredentialsError } from '../../../core/errors/InvalidCredentialsError'
 
 export class Password {
   constructor(readonly value: string) {
